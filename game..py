@@ -74,10 +74,8 @@ def hangman(lo):
 
 #Winning fucntion
 
-def win(guessing_word, word):
-    if guessing_word == word:
+def win():
         print("You saved the man")
-        return False
 
 
 
@@ -150,7 +148,9 @@ def runner(chances):
        
         #game won all letter guessed
 
-        game = win(guessed_word,word)
+        if guessing_word == word:
+            win()
+            game = False
     
     #chance lost game lost
         if chances == 0:
